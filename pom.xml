@@ -11,8 +11,15 @@
   <packaging>maven-plugin</packaging>
 
   <name>empty-jars-maven-plugin</name>
+  <description>Creates empty source and javadoc jars</description>
 
   <url>https://www.pitest.org</url>
+
+  <scm>
+    <connection>scm:git:git://github.com/hcoles/empty-jars-plugin</connection>
+    <developerConnection>scm:git:ssh://github.com:hcoles/empty-jars-plugin.git</developerConnection>
+    <url>http://github.com/hcoles/empty-jars-plugin/tree/main</url>
+  </scm>
 
   <prerequisites>
     <maven>${maven.version}</maven>
@@ -211,6 +218,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-plugin-plugin</artifactId>
+        <version>3.15.1</version>
         <configuration>
           <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
         </configuration>
@@ -231,5 +239,12 @@
       </plugin>
     </plugins>
   </build>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>central-portal-snapshots</id>
+      <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
 
 </project>
